@@ -1,0 +1,341 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jankowalski@abc.com",
+      "phone": "123456789",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 2,
+      "firstName": "Andrzej",
+      "lastName": "Nowak",
+      "email": "andrzejnowak@abc.com",
+      "phone": "234567891",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 3,
+      "firstName": "Paweł",
+      "lastName": "Andrzejewski",
+      "email": "pawand@abc.com",
+      "phone": "345678912",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 4,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jankowalski@abc.com",
+      "phone": "123456789",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 5,
+      "firstName": "Andrzej",
+      "lastName": "Nowak",
+      "email": "andrzejnowak@abc.com",
+      "phone": "234567891",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 6,
+      "firstName": "Paweł",
+      "lastName": "Andrzejewski",
+      "email": "pawand@abc.com",
+      "phone": "345678912",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 7,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jankowalski@abc.com",
+      "phone": "123456789",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 8,
+      "firstName": "Andrzej",
+      "lastName": "Nowak",
+      "email": "andrzejnowak@abc.com",
+      "phone": "234567891",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 9,
+      "firstName": "Paweł",
+      "lastName": "Andrzejewski",
+      "email": "pawand@abc.com",
+      "phone": "345678912",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 10,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jankowalski@abc.com",
+      "phone": "123456789",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 11,
+      "firstName": "Andrzej",
+      "lastName": "Nowak",
+      "email": "andrzejnowak@abc.com",
+      "phone": "234567891",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 12,
+      "firstName": "Paweł",
+      "lastName": "Andrzejewski",
+      "email": "pawand@abc.com",
+      "phone": "345678912",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 13,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jankowalski@abc.com",
+      "phone": "123456789",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 14,
+      "firstName": "Andrzej",
+      "lastName": "Nowak",
+      "email": "andrzejnowak@abc.com",
+      "phone": "234567891",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    },
+    {
+      "id": 15,
+      "firstName": "Paweł",
+      "lastName": "Andrzejewski",
+      "email": "pawand@abc.com",
+      "phone": "345678912",
+      "isActive": "true",
+      "status": "aktywny",
+      "role": "pracownik"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "topic": "Przykładowy temat zadania 1",
+      "taskManager": "Piotr Żyła",
+      "type": "Kontrola doraźna nieplanowa",
+      "planItem": null,
+      "methodology": "Agile",
+      "startDate": "10.03.2021",
+      "plannedFinishDate": "21.06.2021",
+      "correctedFinishDate": "13.07.2021",
+      "finishDate": null,
+      "auditedCompanies": [
+        {
+          "id": 1,
+          "name": "Towary Dystrybucja",
+          "acronym": "TD"
+        },
+        {
+          "id": 2,
+          "name": "Audyt Wewnętrzny",
+          "acronym": "AW"
+        }
+      ],
+      "milestones": [
+        {
+          "id": 1,
+          "name": "Wysłanie LO",
+          "consecutiveNumber": 1,
+          "taskShare": 10,
+          "percentageDone": 0,
+          "isDone": false,
+          "divisible": false
+        },
+        {
+          "id": 2,
+          "name": "Realizacja sprintów",
+          "consecutiveNumber": 2,
+          "taskShare": 60,
+          "percentageDone": 0,
+          "isDone": false,
+          "divisible": true
+        },
+        {
+          "id": 3,
+          "name": "Przesłanie wniosków i rekomendacji ze wszystkich sprintów do konsultacji w formie raportu wstępnego",
+          "consecutiveNumber": 3,
+          "taskShare": 10,
+          "percentageDone": 0,
+          "isDone": false,
+          "divisible": false
+        },
+        {
+          "id": 4,
+          "name": "Odpowiedź audytowanych",
+          "consecutiveNumber": 4,
+          "taskShare": 10,
+          "percentageDone": 0,
+          "isDone": false,
+          "divisible": false
+        },
+        {
+          "id": 5,
+          "name": "Wysłanie raportu końcowego",
+          "consecutiveNumber": 5,
+          "taskShare": 10,
+          "percentageDone": 0,
+          "isDone": false,
+          "divisible": false
+        }
+      ],
+      "teamMembers": ["Adam Małysz", "Andrzej Gołota", "Ireneusz Jeleń"]
+    }
+  ],
+  "plan-statistics": {
+    "id": 1,
+    "year": 2021,
+    "numberOfTasks": 8,
+    "numberOfTasksNotStarted": 2,
+    "numberOfTasksInProgress": 6,
+    "numberOfTasksFinished": 2
+  },
+  "plan-items": [
+    {
+      "id": 1,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 1",
+      "taskStatus": "Nierozpoczęte",
+      "percentDone": 0
+    },
+    {
+      "id": 2,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 2",
+      "taskStatus": "W trakcie realizacji",
+      "percentDone": 30
+    },
+    {
+      "id": 3,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 3",
+      "taskStatus": "W trakcie realizacji",
+      "percentDone": 20
+    },
+    {
+      "id": 4,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 4",
+      "taskStatus": "W trakcie realizacji",
+      "percentDone": 50
+    },
+    {
+      "id": 5,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 5",
+      "taskStatus": "Zakończone",
+      "percentDone": 100
+    },
+    {
+      "id": 6,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 6",
+      "taskStatus": "W trakcie realizacji",
+      "percentDone": 85
+    },
+    {
+      "id": 7,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 7",
+      "taskStatus": "Zakończone",
+      "percentDone": 100
+    },
+    {
+      "id": 8,
+      "planId": 1,
+      "title": "Przykładowa nazwa zadania z planu - zadanie 8",
+      "taskStatus": "Nierozpoczęte",
+      "percentDone": 0
+    }
+  ],
+  "milestones": [
+    {
+      "id": 1,
+      "name": "Wysłanie LO",
+      "consecutiveNumber": 1,
+      "taskShare": 10,
+      "percentageDone": 0,
+      "isDone": false,
+      "divisible": false
+    },
+    {
+      "id": 2,
+      "name": "Realizacja sprintów",
+      "consecutiveNumber": 2,
+      "taskShare": 60,
+      "percentageDone": 0,
+      "isDone": false,
+      "divisible": true
+    },
+    {
+      "id": 3,
+      "name": "Przesłanie wniosków i rekomendacji ze wszystkich sprintów do konsultacji w formie raportu wstępnego",
+      "consecutiveNumber": 3,
+      "taskShare": 10,
+      "percentageDone": 0,
+      "isDone": false,
+      "divisible": false
+    },
+    {
+      "id": 4,
+      "name": "Odpowiedź audytowanych",
+      "consecutiveNumber": 4,
+      "taskShare": 10,
+      "percentageDone": 0,
+      "isDone": false,
+      "divisible": false
+    },
+    {
+      "id": 5,
+      "name": "Wysłanie raportu końcowego",
+      "consecutiveNumber": 5,
+      "taskShare": 10,
+      "percentageDone": 0,
+      "isDone": false,
+      "divisible": false
+    }
+  ]
+}

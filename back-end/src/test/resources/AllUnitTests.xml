@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All unit tests">
+    <test name="Service Suite">
+        <classes>
+            <class name="com.iet.audit_app.service.PlanServiceTest" />
+        </classes>
+    </test>
+    <test name="Utils Suite">
+        <classes>
+            <class name="com.iet.audit_app.utils.DescriptionUtilsTest" />
+        </classes>
+    </test>
+</suite>

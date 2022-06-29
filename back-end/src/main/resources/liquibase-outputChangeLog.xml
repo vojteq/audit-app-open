@@ -1,0 +1,384 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet author="T (generated)" id="1641228419778-1">
+        <createTable tableName="task_request">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="task_request_pkey"/>
+            </column>
+            <column name="acceptance" type="INTEGER"/>
+            <column name="external_employees" type="VARCHAR(255)"/>
+            <column name="is_ad_hoc" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="planned_finished_date" type="date"/>
+            <column name="start_date" type="date"/>
+            <column name="task_type" type="INTEGER"/>
+            <column name="topic" type="VARCHAR(255)"/>
+            <column name="methodology_id" type="BIGINT"/>
+            <column name="task_manager_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-2">
+        <createTable tableName="employee">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="employee_pkey"/>
+            </column>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="is_active" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="role" type="VARCHAR(255)"/>
+            <column name="team_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-3">
+        <createTable tableName="task_team_members">
+            <column name="task_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_members_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-4">
+        <createTable tableName="milestone">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="milestone_pkey"/>
+            </column>
+            <column name="consecutive_number" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="divisible" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="done" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="percentage_done" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_share" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-5">
+        <createTable tableName="task_milestones">
+            <column name="task_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="milestones_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-6">
+        <createTable tableName="methodology">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="methodology_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-7">
+        <createTable tableName="quarter_task_stats">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="quarter_task_stats_pkey"/>
+            </column>
+            <column name="quarter" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_name" type="VARCHAR(255)"/>
+            <column name="task_status" type="INTEGER"/>
+            <column name="task_type" type="INTEGER"/>
+            <column name="plan_id" type="BIGINT"/>
+            <column name="task_id" type="BIGINT"/>
+            <column name="team_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-8">
+        <createTable tableName="task">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="task_pkey"/>
+            </column>
+            <column name="corrected_finish_date" type="date"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="external_employees" type="VARCHAR(255)"/>
+            <column name="finished_date" type="date"/>
+            <column name="is_ad_hoc" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="methodology_name" type="VARCHAR(255)"/>
+            <column name="oper_action_performed" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="planned_finished_date" type="date"/>
+            <column name="sharepoint_url" type="VARCHAR(255)"/>
+            <column name="start_date" type="date"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="task_type" type="VARCHAR(255)"/>
+            <column name="topic" type="VARCHAR(255)"/>
+            <column name="wpzid" type="VARCHAR(255)"/>
+            <column name="year" type="SMALLINT"/>
+            <column name="task_manager_id" type="BIGINT"/>
+            <column name="team_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-9">
+        <createTable tableName="methodology_milestone_templates">
+            <column name="methodology_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="milestone_templates_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-10">
+        <createTable tableName="milestone_template">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="milestone_template_pkey"/>
+            </column>
+            <column name="consecutive_number" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="divisible" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="task_share" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-11">
+        <createTable tableName="team">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="team_pkey"/>
+            </column>
+            <column name="acronym" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-12">
+        <createTable tableName="task_request_team_members">
+            <column name="task_request_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_members_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-13">
+        <createTable tableName="task_request_audited_companies">
+            <column name="task_request_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="audited_companies_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-14">
+        <createTable tableName="plan_item">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="plan_item_pkey"/>
+            </column>
+            <column name="is_ad_hoc" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="plan_item_title" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="plan_id" type="BIGINT"/>
+            <column name="task_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-15">
+        <createTable tableName="suspension">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="suspension_pkey"/>
+            </column>
+            <column name="date_from" type="date"/>
+            <column name="date_to" type="date"/>
+            <column name="reason" type="VARCHAR(255)"/>
+            <column name="task_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-16">
+        <createTable tableName="plan">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="plan_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="unfinished_tasks_moved" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="year" type="SMALLINT"/>
+            <column name="auditing_team_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-17">
+        <createTable tableName="task_audited_companies">
+            <column name="task_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="audited_companies_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-18">
+        <createTable tableName="quarter_stats">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="quarter_stats_pkey"/>
+            </column>
+            <column name="cancelled" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="finished" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="in_progress" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="moved" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="not_started" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="percentage_done" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quarter" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suspended" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="year" type="SMALLINT"/>
+            <column name="plan_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-19">
+        <createTable tableName="company">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="company_pkey"/>
+            </column>
+            <column name="acronym" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-20">
+        <createTable tableName="task_suspensions">
+            <column name="task_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="suspensions_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-21">
+        <addForeignKeyConstraint baseColumnNames="methodology_id" baseTableName="task_request" constraintName="fk45e6kjuow274s5dqryfp02bd5" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="methodology" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-22">
+        <addForeignKeyConstraint baseColumnNames="task_request_id" baseTableName="task_request_team_members" constraintName="fk6v7v6lstcqr2wu68yyfbxrws6" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task_request" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-23">
+        <addForeignKeyConstraint baseColumnNames="task_request_id" baseTableName="task_request_audited_companies" constraintName="fk7283q2m8gjfjlaocttpl4jo3a" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task_request" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-24">
+        <addForeignKeyConstraint baseColumnNames="task_manager_id" baseTableName="task_request" constraintName="fkc1j63swt4m4tn1fovgwenwtp0" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-25">
+        <addForeignKeyConstraint baseColumnNames="team_members_id" baseTableName="task_team_members" constraintName="fk184il9f6vf3kxr3moele7hqru" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-26">
+        <addForeignKeyConstraint baseColumnNames="task_manager_id" baseTableName="task" constraintName="fk5nx6mwf0k2xc6evclkr4vl1xi" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-27">
+        <addForeignKeyConstraint baseColumnNames="team_id" baseTableName="employee" constraintName="fk8d7lrsr6kwirr93rx0tafnoqa" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="team" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-28">
+        <addForeignKeyConstraint baseColumnNames="team_members_id" baseTableName="task_request_team_members" constraintName="fkpvssl05i7dplvfub9vq95dqar" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-29">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="task_team_members" constraintName="fk6g8ngtp80rydbikletsjl1xjp" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-30">
+        <addForeignKeyConstraint baseColumnNames="milestones_id" baseTableName="task_milestones" constraintName="fk3fhul60oqtp6aior3odettxiu" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="milestone" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-31">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="task_milestones" constraintName="fk8klmvyy32an6tirijsdb0v7rf" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-32">
+        <addUniqueConstraint columnNames="milestones_id" constraintName="uk_5f7cmscl6lua1jn1tnxuxf755" tableName="task_milestones"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-33">
+        <addForeignKeyConstraint baseColumnNames="methodology_id" baseTableName="methodology_milestone_templates" constraintName="fk8erkjmrun3uq3ajmvpbrll34x" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="methodology" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-34">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="quarter_task_stats" constraintName="fk4amd8b02o4qwsdtkmuq5gd5gg" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-35">
+        <addForeignKeyConstraint baseColumnNames="team_id" baseTableName="quarter_task_stats" constraintName="fkauopep7r2b0is7mdeal9hnn3k" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="team" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-36">
+        <addForeignKeyConstraint baseColumnNames="plan_id" baseTableName="quarter_task_stats" constraintName="fki2j0ejsefslqp51lt0dj9f9na" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="plan" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-37">
+        <addForeignKeyConstraint baseColumnNames="team_id" baseTableName="task" constraintName="fk6r32b6vk1rpu7ww7gratmce1i" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="team" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-38">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="plan_item" constraintName="fk8x2q5r3sr0hv5dm0rkvh9474" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-39">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="suspension" constraintName="fkebjdvr66yq10864yshl195uul" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-40">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="task_audited_companies" constraintName="fkhxcwpqxi6j8iqgcgaoy7uulmr" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-41">
+        <addForeignKeyConstraint baseColumnNames="task_id" baseTableName="task_suspensions" constraintName="fkqq6sa7lxrccs8c8825nr0es0b" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="task" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-42">
+        <addForeignKeyConstraint baseColumnNames="milestone_templates_id" baseTableName="methodology_milestone_templates" constraintName="fk690n2uejrvr5g8r0eyy1j6jfv" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="milestone_template" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-43">
+        <addUniqueConstraint columnNames="milestone_templates_id" constraintName="uk_3xqb82mygymoumaiywblhyj18" tableName="methodology_milestone_templates"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-44">
+        <addForeignKeyConstraint baseColumnNames="auditing_team_id" baseTableName="plan" constraintName="fkkb5mgexo6pnd91emjuucx6no8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="team" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-45">
+        <addForeignKeyConstraint baseColumnNames="audited_companies_id" baseTableName="task_request_audited_companies" constraintName="fki97rhhncxlfxyvnsyp9jk4avc" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="company" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-46">
+        <addForeignKeyConstraint baseColumnNames="plan_id" baseTableName="plan_item" constraintName="fkg7drrw20mw6k57j29gvb7sf6h" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="plan" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-47">
+        <addForeignKeyConstraint baseColumnNames="suspensions_id" baseTableName="task_suspensions" constraintName="fkpadnxysv0x2xnpetag2l438no" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="suspension" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-48">
+        <addForeignKeyConstraint baseColumnNames="plan_id" baseTableName="quarter_stats" constraintName="fki1wq9g6a7ldr3uqowxq32v3wg" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="plan" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-49">
+        <addForeignKeyConstraint baseColumnNames="audited_companies_id" baseTableName="task_audited_companies" constraintName="fkppsq4b6hk7kdh0mqpkk2y2bq7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="company" validate="true"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-50">
+        <addUniqueConstraint columnNames="suspensions_id" constraintName="uk_he2trwmaprp34o92otfm8ynjm" tableName="task_suspensions"/>
+    </changeSet>
+    <changeSet author="T (generated)" id="1641228419778-51">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="hibernate_sequence" startValue="1"/>
+    </changeSet>
+</databaseChangeLog>
